@@ -1,7 +1,7 @@
 from decimal import Decimal, ROUND_HALF_UP
 
-PURCHASE_PRICE = 0.5
-PAYMENT = 2
+PURCHASE_PRICE = 66
+PAYMENT = 200
 
 NOTES = (5000, 2000, 1000, 500, 200, 100, 50)
 COINS = (50, 20, 10, 5, 2, 1)
