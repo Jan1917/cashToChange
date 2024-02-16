@@ -1,5 +1,7 @@
-PURCHASE_PRICE = 111
-PAYMENT = 1000
+from decimal import Decimal, ROUND_HALF_UP
+
+PURCHASE_PRICE = 0.5
+PAYMENT = 2
 
 NOTES = (5000, 2000, 1000, 500, 200, 100, 50)
 COINS = (50, 20, 10, 5, 2, 1)
@@ -41,7 +43,7 @@ def cashToChange(purchase_price: int | float, payment: int):
         raise PurchasePriceHigherThanPayment(purchase_price, payment)
 
     # computation of amount of cash
-    payment = int(round(payment))
+    purchase_price = int(Decimal(purchase_price).quantize(0, ROUND_HALF_UP))
     excess_money = payment - purchase_price
 
     # computation of list of tenders
